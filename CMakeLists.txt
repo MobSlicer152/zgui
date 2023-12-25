@@ -12,7 +12,8 @@ add_library(zgui STATIC
   src/controls/text.cc
   src/controls/text_input.cc
   src/controls/toggle_button.cc
-  src/controls/window.cc)
+  src/controls/window.cc
+  c/zgui.cpp)
 
 set_target_properties(zgui PROPERTIES
   LINKER_LANGUAGE CXX

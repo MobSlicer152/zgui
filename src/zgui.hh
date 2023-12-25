@@ -6,7 +6,6 @@
 #include <string>
 #include <string_view>
 #include <type_traits>
-#include <windows.h>
 #include <algorithm>
 #include <iomanip>
 #include <sstream>
@@ -135,7 +134,8 @@ namespace zgui {
     using filled_rect_t = std::add_pointer_t<void(int x, int y, int x2, int y2, color color) noexcept>;
     using text_t = std::add_pointer_t<void(int x, int y, color color, int font, bool center, const char *text) noexcept>;
     using get_text_size_t = std::add_pointer_t<void(unsigned long font, const char *text, int &width, int &height) noexcept>;
-    using get_frametime = std::add_pointer_t<float() noexcept>;
+    using get_frametime_t = std::add_pointer_t<float() noexcept>;
+    using get_key_t = std::add_pointer_t<bool(int vk)> noexcept;
     ///
 
     // "Proxy" functions stuff...
@@ -145,7 +145,8 @@ namespace zgui {
       filled_rect_t draw_filled_rect;
       text_t draw_text;
       get_text_size_t get_text_size;
-      get_frametime get_frametime;
+      get_frametime_t get_frametime;
+      get_key_t get_key;
     };
     extern functions_t functions;
 
