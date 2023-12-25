@@ -2,5 +2,6 @@
 /.idea
 # CMake
 /cmake-build-debug
+/build
 # ZGUI
 /dist
